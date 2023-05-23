@@ -16,10 +16,11 @@ const findLocation = () => {
     navigator.geolocation.getCurrentPosition(sucess, error);
 }
 
-findLocation();
+ findLocation();
 
 function* fetchSearchResults(action) {
     try {
+      
         console.log('this is the location', currentLocation);
         yield axios.post('/search', {...currentLocation, term: action.payload});
         const results = yield axios.get('/search');
@@ -27,7 +28,7 @@ function* fetchSearchResults(action) {
         yield put({type: 'SET_RESULTS', payload: results.data});
 
     } catch (err) {
-        console.log('yelping error:', err);
+        console.log('SAGA/SEARCH error:', err);
     }
 }
 

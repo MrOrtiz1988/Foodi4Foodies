@@ -13,11 +13,12 @@ function Search() {
             type: 'SAGA/SEARCH',
             payload: searchInput
         })
+        setSearchInput('');
     }
 
     return (
         <div>
-            <form className="search-form">
+            <form className="search-form" onSubmit={submitHandler}>
                 <input
                     placeholder="What would you like to eat?"
                     value={searchInput}

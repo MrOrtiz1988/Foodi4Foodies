@@ -1,13 +1,14 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const axios = require('axios');
 require('dotenv').config();
-
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 
 
 let clientInfo;
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
   console.log(req.body);
   clientInfo = req.body
   res.sendStatus(200)
@@ -16,7 +17,7 @@ router.post('/', (req, res) => {
 
 
 
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
 
   
   let config = {
@@ -31,7 +32,7 @@ router.get('/', (req, res) => {
   axios.request(config)
   .then((response) => {
     console.log(response.data);
-    res.send(response.data);
+    res.send(response.data.businesses);
   })
   .catch((error) => {
     console.log(error);
