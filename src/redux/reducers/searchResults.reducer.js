@@ -7,7 +7,6 @@ const results = (state = [], action) => {
     }
   };
   
-  // user will be on the redux state at:
-  // state.user
+ //results reducer holds results for the search query
   export default results;
   

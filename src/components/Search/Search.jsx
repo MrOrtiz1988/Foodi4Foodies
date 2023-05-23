@@ -9,10 +9,12 @@ function Search() {
 
     const submitHandler = (event) => {
         event.preventDefault();
+        //Tells saga which function to run and to use the search input value
         dispatch({
             type: 'SAGA/SEARCH',
             payload: searchInput
         })
+        //Clears the input field
         setSearchInput('');
     }
 
