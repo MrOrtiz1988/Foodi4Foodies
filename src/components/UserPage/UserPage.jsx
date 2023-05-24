@@ -23,6 +23,13 @@ function UserPage() {
     }
   }
 
+  const chosen = (type) => {
+    dispatch({
+      type: 'SAGA/SEARCH',
+      payload: type
+  })
+  }
+
   return (
     <div className="container">
       <h2>Welcome {user.username}, Lets Eat! </h2>
@@ -35,7 +42,7 @@ function UserPage() {
       {is_suggest &&
         suggestions.map((type, i) => {
           return (
-            <p key={i}>{type}</p>
+            <p onClick={() => chosen(type)} key={i}>{type}</p>
           )
         })
       }
