@@ -9,9 +9,43 @@ body {
   margin: 0px;
 }
 
-img {
+/* img {
   display: inline-block;
   max-width: 100%;
+  width: 200px;
+  height: auto;
+} */
+
+.result-title {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-div {
+  text-align: right;
+}
+
+.result-img {
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  float: left;
+}
+
+.result-div {
+  display: block;
+  margin: 40px;
+  background-color: #c9b090;
+  border-radius: 15px;
+  color: #146356;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.result-details {
+  margin-left: 220px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -32,8 +66,8 @@ Button
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
-  color: #f8f8f8;
+  background-color: #72b7c6;
+  color: #cef3ed;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
@@ -110,4 +144,3 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
-

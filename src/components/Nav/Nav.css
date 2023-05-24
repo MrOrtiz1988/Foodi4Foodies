@@ -5,7 +5,7 @@
   align-items: center;
 
   margin: 0 0 30px;
-  background-color: #00acb0;
+  background-color: #72b7c6;
   overflow: hidden;
 }
 
@@ -14,17 +14,17 @@
 }
 
 .nav-title {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
-  color: #f2f2f2;
+  color: #cef3ed;
   padding-left: 10px;
   margin: 0;
 }
 
 .navLink {
   display: inline-block;
-  color: #f2f2f2;
-  background-color: #00acb0;
+  color: #cef3ed;
+  background-color: #72b7c6;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
@@ -37,6 +37,6 @@
   outline: 0;
 }
 
-.navLink:hover {
-  background-color: #008183;
-}
+/* .navLink:hover {
+  background-color: #e2e2e2;
+} */
