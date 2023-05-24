@@ -2,30 +2,44 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Search from '../Search/Search';
 import ResultItem from '../ResultItem/ResultItem';
+import { useState } from 'react';
 
 function UserPage() {
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const searchResults = useSelector((store) => store.results);
   const suggestions = useSelector(store => store.suggestions);
+  const [is_suggest, setIs_suggest] = useState(false);
   const dispatch = useDispatch();
 
   const reRoll = () => {
-    dispatch({ type: 'REROLL' })
+    dispatch({ type: 'REROLL' });
+  }
+
+  const suggestToggle = () => {
+    if (!is_suggest) {
+      setIs_suggest(true);
+    } else {
+      setIs_suggest(false);
+    }
   }
 
   return (
     <div className="container">
-      <h2>Welcome, {user.username}, Lets Eat! </h2>
+      <h2>Welcome {user.username}, Lets Eat! </h2>
 
-      {
+      <h4>Dont know what to eat? Click the suggestions button</h4>
+      {!is_suggest ?
+        <button onClick={suggestToggle}>Suggestions</button>
+        : <button onClick={suggestToggle}>Close</button>}
+
+      {is_suggest &&
         suggestions.map((type, i) => {
           return (
             <p key={i}>{type}</p>
           )
         })
       }
-      <button onClick={reRoll}>Re-Roll</button>
+      {is_suggest && <button onClick={reRoll}>Re-Roll</button>}
 
       <Search />
 
