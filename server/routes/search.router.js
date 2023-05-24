@@ -11,7 +11,6 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 
 let clientInfo; //hold location coords and term user in search field
 router.post('/', rejectUnauthenticated, (req, res) => {
-  console.log(req.body);
   clientInfo = req.body;
   res.sendStatus(200);
 });
@@ -30,7 +29,6 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   
   axios.request(config)
   .then((response) => {
-    console.log(response.data);
     res.send(response.data.businesses);
   })
   .catch((error) => {
