@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Search from '../Search/Search';
 import ResultItem from '../ResultItem/ResultItem';
-import Suggestions from '../../Suggestions/Suggestions';
+import Suggestions from '../Suggestions/Suggestions';
 
 function UserPage() {
   const user = useSelector((store) => store.user);
@@ -28,5 +28,4 @@ function UserPage() {
   );
 }
 
-// this allows us to use <App /> in index.js
 export default UserPage;

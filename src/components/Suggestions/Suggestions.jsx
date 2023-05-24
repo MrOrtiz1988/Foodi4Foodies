@@ -2,14 +2,17 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 function Suggestions() {
+    //This retrieves the 5 random suggestions from the store
     const suggestions = useSelector(store => store.suggestions);
+    //This state will be used for toggling purposes
     const [is_suggest, setIs_suggest] = useState(false);
     const dispatch = useDispatch();
-
+    //reRoll makes the suggestions reducer re-generate the list of suggestions
     const reRoll = () => {
         dispatch({ type: 'REROLL' });
     }
-
+    //This will be my toggle for the suggestions button on the DOM goes between
+    //suggestions being hidden to it being displayed
     const suggestToggle = () => {
         if (!is_suggest) {
             setIs_suggest(true);
@@ -17,7 +20,8 @@ function Suggestions() {
             setIs_suggest(false);
         }
     }
-
+    //This will send to the server the value that got clicked on instead of having to type
+    //it in the search input
     const chosen = (type) => {
         dispatch({
             type: 'SAGA/SEARCH',

@@ -1,3 +1,4 @@
+//I manually created a whole list of food types to be used for suggestion feature
 const foodTypes = ['Canadian', 'Caribbean', 'Cuban', 'Hawaiian', 'Mexican', 'Burmese', 'Cambodian', 'Chinese', 'Filipino',
     'Indian', 'Indonesian', 'Japanese', 'Korean', 'Lebanese', 'Malaysian', 'Middle Eastern', 'Pakistani', 'Singaporean',
     'Southeast Asian', 'Sri Lankan', 'Thai', 'Tibetan', 'Turkish', 'Vietnamese', 'Danish', 'French', 'German', 'Greek',
@@ -7,10 +8,12 @@ const foodTypes = ['Canadian', 'Caribbean', 'Cuban', 'Hawaiian', 'Mexican', 'Bur
     'Brunch', 'Bistro', 'Seafood', 'Vegan', 'Vegetarian', 'Grill', 'Jewish/Kosher', 'Soup', 'Lunch', 'Dinner', 'Organic',
     'Noodles', 'African', 'Egyptian', 'Ethiopian', 'Brunch', 'Beef', 'Pork'];
 
+//randomizer returns a random number from 0 to the length number of foodTypes
 const randomizer = () => {
     return Math.floor(Math.random() * foodTypes.length);
 }
 
+//This function generates a new set of suggestions everytime it is called upon
 const generateTypes = () => {
     const suggest1 = foodTypes[randomizer()];
     const suggest2 = foodTypes[randomizer()];
@@ -20,7 +23,7 @@ const generateTypes = () => {
     return [suggest1, suggest2, suggest3, suggest4, suggest5];
 }
 
-
+//This is my suggestions reducer that the component will utilize
 const suggestions = (state = generateTypes(), action) => {
     switch (action.type) {
         case 'REROLL':
