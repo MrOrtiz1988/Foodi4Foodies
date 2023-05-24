@@ -1,7 +1,7 @@
 import React from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import Search from '../Search/Search';
+import ResultItem from '../ResultItem/ResultItem';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -14,21 +14,7 @@ function UserPage() {
       {
         searchResults.map(result => {
           return (
-            <div key={result.id} className='result-div'>
-              <h2 className='result-title'>{result.name}</h2>
-              <img src={result.image_url} className='result-img' />
-              <div className='result-details'>
-              {!result.is_closed ? <p>Open Now</p> : <p>Closed</p>}
-              <p>{result.rating} out of 5 stars</p>
-              <p>{result.location.display_address}</p>
-              <p>{result.display_phone}</p>
-              <a href={result.url} target='_blank'>Visit Here</a>
-              </div>
-              <br></br>
-              <div className='btn-div'>
-              <button className='btn'>Save</button>
-              </div>
-            </div>
+            <ResultItem key={result.id} result={result} />
           )
         })
       }
