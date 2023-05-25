@@ -1,9 +1,26 @@
-
+import { useDispatch } from 'react-redux';
 
 
 
 
 function ResultItem({ result }) {
+
+  const dispatch = useDispatch();
+
+  const saveIt = () => {
+    dispatch({
+      type: 'SAGA/SAVE',
+      payload: {
+        name: result.name,
+        image: result.image_url,
+        address: result.location.display_address,
+        rating: result.rating,
+        phone: result.display_phone,
+        url: result.url
+      }
+    })
+  }
+
   return (
     <div className='result-div'>
       <h2 className='result-title'>{result.name}</h2>
@@ -17,7 +34,7 @@ function ResultItem({ result }) {
       </div>
       <br></br>
       <div className='btn-div'>
-        <button className='btn'>Save</button>
+        <button onClick={saveIt} className='btn'>Save</button>
       </div>
     </div>
   )
