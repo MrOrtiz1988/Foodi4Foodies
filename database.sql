@@ -11,6 +11,7 @@ CREATE TABLE "user" (
 
 CREATE TABLE "places" (
 	"id" SERIAL PRIMARY KEY,
+	"place_id" VARCHAR(1000),
 	"name" VARCHAR(80),
 	"image" VARCHAR(1000),
 	"address" VARCHAR(250),
