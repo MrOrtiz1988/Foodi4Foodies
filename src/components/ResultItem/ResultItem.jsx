@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 
@@ -10,7 +10,19 @@ function ResultItem({ result }) {
     });
   }, [])
 
+
+  const placeId = useSelector(store => store.placeIdList);
   const dispatch = useDispatch();
+
+  const match = () => {
+    let placeIds = placeId.map(place => place.place_id);
+    if (placeIds.includes(result.id)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 
   const saveIt = () => {
     dispatch({
@@ -40,7 +52,7 @@ function ResultItem({ result }) {
       </div>
       <br></br>
       <div className='btn-div'>
-        <button onClick={saveIt} className='btn'>Save</button>
+        {!match() ? <button onClick={saveIt} className='btn'>Save</button> : <p>Saved</p>}
       </div>
     </div>
   )
