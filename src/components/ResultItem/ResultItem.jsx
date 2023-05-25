@@ -11,6 +11,7 @@ function ResultItem({ result }) {
     dispatch({
       type: 'SAGA/SAVE',
       payload: {
+        placeId: result.id,
         name: result.name,
         image: result.image_url,
         address: result.location.display_address,
