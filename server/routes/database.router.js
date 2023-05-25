@@ -3,8 +3,16 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
-router.get('/getId', (req, res) => {
-  // GET route code here
+router.get('/getId', rejectUnauthenticated, (req, res) => {
+  const sqlQuery = `select place_id from places;`;
+  pool.query(sqlQuery)
+ .then((dbRes) => {
+  res.send(dbRes.rows);
+ })
+ .catch((dbErr) => {
+   console.log('GET /database/getId fail:', dbErr);
+   res.sendStatus(500);
+ })
 });
 
 
@@ -27,11 +35,11 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
  pool.query(sqlQuery, sqlValues)
  .then((dbRes) => {
-   res.sendStatus(201)
+   res.sendStatus(201);
  })
  .catch((dbErr) => {
-   console.log('POST /database fail:', dbErr)
-   res.sendStatus(500)
+   console.log('POST /database fail:', dbErr);
+   res.sendStatus(500);
  })
 
 });

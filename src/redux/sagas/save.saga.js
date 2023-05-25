@@ -2,8 +2,11 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 function* saveToDB (action)  {
-    console.log('this is the object we want to save', action.payload);
-    yield axios.post('/database', action.payload);
+    try {
+         yield axios.post('/database', action.payload);
+    } catch (err) {
+        console.log('SAGA saveToDB error:', err);
+      }
 }
 
 function* saveSaga () {

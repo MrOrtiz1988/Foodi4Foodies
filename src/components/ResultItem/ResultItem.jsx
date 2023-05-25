@@ -1,9 +1,14 @@
 import { useDispatch } from 'react-redux';
-
-
+import { useEffect } from 'react';
 
 
 function ResultItem({ result }) {
+
+  useEffect(() => {
+    dispatch({
+      type: 'SAGA/GET_PLACE_ID_LIST'
+    });
+  }, [])
 
   const dispatch = useDispatch();
 
