@@ -1,14 +1,20 @@
 import React from 'react';
-
-// This is one of our simplest components
-// It doesn't have local state
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 function SavedList() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: 'SAGA/GET_PLACES'
+    });
+  }, []);
+
   return (
     <div className="container">
-      <p>Saved Page</p>
+      <h1>Saved Page</h1>
     </div>
   );
 }
