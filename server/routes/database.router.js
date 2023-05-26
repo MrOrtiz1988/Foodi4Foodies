@@ -3,10 +3,22 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
+router.get('/', rejectUnauthenticated, (req, res) => {
+  const sqlQuery = `select * from places WHERE user_id = $1;`;
+  pool.query(sqlQuery, [req.user.id])
+ .then((dbRes) => {
+  res.send(dbRes.rows);
+ })
+ .catch((dbErr) => {
+   console.log('GET /database/ fail:', dbErr);
+   res.sendStatus(500);
+ })
+});
+
 // This GET for retrieving list of id's of saved places
 router.get('/getId', rejectUnauthenticated, (req, res) => {
-  const sqlQuery = `select place_id from places;`;
-  pool.query(sqlQuery)
+  const sqlQuery = `select place_id from places WHERE user_id = $1;`;
+  pool.query(sqlQuery, [req.user.id])
  .then((dbRes) => {
   res.send(dbRes.rows);
  })
