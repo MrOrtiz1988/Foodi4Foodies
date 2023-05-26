@@ -10,7 +10,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   res.send(dbRes.rows);
  })
  .catch((dbErr) => {
-   console.log('GET /database/getId fail:', dbErr);
+   console.log('GET /database/ fail:', dbErr);
    res.sendStatus(500);
  })
 });
