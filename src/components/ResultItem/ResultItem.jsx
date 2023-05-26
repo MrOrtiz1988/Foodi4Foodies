@@ -3,17 +3,19 @@ import { useEffect } from 'react';
 
 
 function ResultItem({ result }) {
-
+  //useEffect is always having the ids of saved placed on hand
   useEffect(() => {
     dispatch({
       type: 'SAGA/GET_PLACE_ID_LIST'
     });
   }, [])
 
-
+  //This is our list of saved ids 
   const placeId = useSelector(store => store.placeIdList);
   const dispatch = useDispatch();
 
+  //match is responsible for checking if the place that is displayed mathes with the list
+  //of saved places to prevent user from saving a place more than once
   const match = () => {
     let placeIds = placeId.map(place => place.place_id);
     if (placeIds.includes(result.id)) {
@@ -24,6 +26,7 @@ function ResultItem({ result }) {
     }
   }
 
+  //saveIt send data to saga to then be sent to server then stored in database
   const saveIt = () => {
     dispatch({
       type: 'SAGA/SAVE',

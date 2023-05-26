@@ -3,6 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
+// This GET for retrieving list of id's of saved places
 router.get('/getId', rejectUnauthenticated, (req, res) => {
   const sqlQuery = `select place_id from places;`;
   pool.query(sqlQuery)
@@ -15,7 +16,7 @@ router.get('/getId', rejectUnauthenticated, (req, res) => {
  })
 });
 
-
+// This POST stores that data that user wishes to be saves to the database 
 router.post('/', rejectUnauthenticated, (req, res) => {
   const placeId = req.body.placeId
   const name = req.body.name;

@@ -18,8 +18,8 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
-    searchSaga(),
-    saveSaga(),
-    getIdSaga()
+    searchSaga(), // runs the function from getSearch.saga
+    saveSaga(),  // runs the function from save.saga
+    getIdSaga(),  // runs the function from placeId.saga
   ]);
 }

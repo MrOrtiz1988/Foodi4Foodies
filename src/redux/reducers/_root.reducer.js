@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   results, //will hold search results
   suggestions, //holds an array of food types to be used for suggestions
-  placeIdList
+  placeIdList, //hold list of ids from the places that was saved
 });
 
 export default rootReducer;
