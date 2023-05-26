@@ -20,7 +20,7 @@ function SavedList() {
       {
         placeList.map(place => {
           return (
-            <div className='result-div'>
+            <div className='result-div' key={place.id}>
               <h2 className='result-title'>{place.name}</h2>
               <img src={place.image} className='result-img' alt={place.name} />
               <div className='result-details'>

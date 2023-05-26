@@ -32,8 +32,8 @@ function Nav() {
               Saved List
             </Link>
 
-            <Link className="navLink" to="/about">
-              About
+            <Link className="navLink" to="/favorite">
+              Favorites List
             </Link>
 
             <LogOutButton className="navLink" />
