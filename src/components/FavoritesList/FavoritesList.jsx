@@ -16,7 +16,7 @@ function FavoritesList() {
 
   const deletePlace = (id) => {
     dispatch({
-      type: 'DELETE_PLACE',
+      type: 'SAGA/DELETE_PLACE',
       payload: id
     })
   }

@@ -7,6 +7,7 @@ import saveSaga from './save.saga';
 import getIdSaga from './placeId.saga';
 import getPlacesSaga from './getPlaces.saga';
 import setFavoritesSaga from './setFavorites.saga';
+import deletePaceSaga from './deletePlace.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -25,5 +26,6 @@ export default function* rootSaga() {
     getIdSaga(),  // runs the function from placeId.saga
     getPlacesSaga(), // runs the function from getPlaces.saga
     setFavoritesSaga(), // runs the function from setFavorites.saga
+    deletePaceSaga(), // runs the function from deletePlace.saga
   ]);
 }
