@@ -78,14 +78,14 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
   const idToDelete = req.params.id;
   
-  const sqlQuery = `DELETE "places" WHERE id = $1;`;
+  const sqlQuery = `DELETE FROM "places" WHERE id = $1;`;
 
   pool.query(sqlQuery, [idToDelete])
  .then((dbRes) => {
   res.sendStatus(200);
  })
  .catch((dbErr) => {
-   console.log('PUT /database/:id fail', dbErr);
+   console.log('DELETE /database/:id fail', dbErr);
    res.sendStatus(500);
  })
 });
