@@ -3,6 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
+// Gets all saved places
 router.get('/', rejectUnauthenticated, (req, res) => {
   const sqlQuery = `select * from places WHERE user_id = $1;`;
   pool.query(sqlQuery, [req.user.id])
@@ -56,5 +57,21 @@ router.post('/', rejectUnauthenticated, (req, res) => {
  })
 
 });
+
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  const idToChange = req.params.id;
+  const valueToChange = true;
+  const sqlValues = [valueToChange, idToChange]
+  const sqlQuery = `UPDATE "places" SET "is_favorite" = $1 WHERE "id" = $2;`;
+
+  pool.query(sqlQuery, sqlValues)
+ .then((dbRes) => {
+  res.sendStatus(200);
+ })
+ .catch((dbErr) => {
+   console.log('PUT /database/:id fail', dbErr);
+   res.sendStatus(500);
+ })
+})
 
 module.exports = router;

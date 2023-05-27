@@ -34,15 +34,14 @@ function FavoritesList() {
                 </div>
                 <br></br>
                 <div className='btn-div'>
-                  <button className='btn'>Love it!</button>
+                  <button className='btn'>Remove</button>
                 </div>
               </div>
-            )
-          }
+            )}
         })
       }
     </div>
-  )
+  );
 }
 
 export default FavoritesList;

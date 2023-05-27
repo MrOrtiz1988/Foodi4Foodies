@@ -13,12 +13,21 @@ function SavedList() {
     });
   }, []);
 
+  const addToFavorites = (id) => {
+    dispatch({
+      type: 'SAGA/CHANGE_TO_FAVORITES',
+      payload: id
+    })
+  }
+
+
   return (
     <div className="container">
       <h1>Saved Page</h1>
 
       {
         placeList.map(place => {
+          if (!place.is_favorite) {
           return (
             <div className='result-div' key={place.id}>
               <h2 className='result-title'>{place.name}</h2>
@@ -31,10 +40,10 @@ function SavedList() {
               </div>
               <br></br>
               <div className='btn-div'>
-                <button className='btn'>Love it!</button>
+                <button onClick={() => addToFavorites(place.id)} className='btn'>Love it!</button>
               </div>
             </div>
-          )
+          )}
         })
       }
     </div>
