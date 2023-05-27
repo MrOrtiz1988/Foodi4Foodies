@@ -14,6 +14,13 @@ function FavoritesList() {
     });
   }, []);
 
+  const deletePlace = (id) => {
+    dispatch({
+      type: 'DELETE_PLACE',
+      payload: id
+    })
+  }
+
   return (
     <div className="container">
       <div>
@@ -34,7 +41,7 @@ function FavoritesList() {
                 </div>
                 <br></br>
                 <div className='btn-div'>
-                  <button className='btn'>Remove</button>
+                  <button onClick={() => deletePlace(place.id)} className='btn'>Remove</button>
                 </div>
               </div>
             )}

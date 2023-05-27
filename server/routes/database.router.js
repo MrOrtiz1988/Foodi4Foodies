@@ -58,6 +58,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
 });
 
+// This changes is favorites to true
 router.put('/:id', rejectUnauthenticated, (req, res) => {
   const idToChange = req.params.id;
   const valueToChange = true;
