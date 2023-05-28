@@ -31,6 +31,7 @@ function RegisterForm() {
       <div className='login-register'>
       <TextField
           required
+          size="small"
           id="outlined-basic"
           type="text"
           label="Username"
@@ -42,6 +43,7 @@ function RegisterForm() {
       <div className='login-register'>
       <TextField
           required
+          size="small"
           id="outlined-basic"
           type='password'
           label="Password"

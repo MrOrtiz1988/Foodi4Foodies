@@ -33,8 +33,11 @@ function LoginForm() {
           {errors.loginMessage}
         </h3>
       )}
+
       <div className='login-register'>
         <TextField
+          required
+          size="small"
           id="outlined-basic"
           type="text"
           label="Username"
@@ -42,19 +45,12 @@ function LoginForm() {
           value={username}
           onChange={(event) => setUsername(event.target.value)}
         />
-        {/* <label htmlFor="username">
-          Username:
-          <input
-            type="text"
-            name="username"
-            required
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </label> */}
       </div>
+
       <div className='login-register'>
         <TextField
+          required
+          size="small"
           id="outlined-basic"
           type='password'
           label="Password"
@@ -62,17 +58,8 @@ function LoginForm() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        {/* <label htmlFor="password">
-          Password:
-          <input
-            type="password"
-            name="password"
-            required
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label> */}
       </div>
+      
       <div>
         <input className="btn" type="submit" name="submit" value="Log In" />
       </div>

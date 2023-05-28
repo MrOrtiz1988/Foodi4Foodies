@@ -24,6 +24,7 @@ function Search() {
         <div>
             <form className="search-form" onSubmit={submitHandler}>
                 <TextField
+                    size="small"
                     id="outlined-basic"
                     label="What would you like?"
                     variant="outlined"
