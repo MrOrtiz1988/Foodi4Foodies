@@ -37,9 +37,9 @@ body {
 .result-div {
   display: block;
   margin: 40px;
-  background-color: #c9b090;
+  background-color: #E8D5C4;
   border-radius: 15px;
-  color: #146356;
+  color: #1b332f;
   overflow: hidden;
   padding: 10px;
 }
@@ -89,7 +89,8 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  /* background-color: #008183; */
+  opacity: 0.75;
   text-decoration: none;
 }
 
@@ -140,7 +141,20 @@ Form Treatment
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
 
+.search-form {
+  margin: 20px;
+  text-align: center;
+}
+
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.login-register {
+  margin-bottom: 20px;
+}
+
+#outlined-basic {
+  background-color: white;
 }
