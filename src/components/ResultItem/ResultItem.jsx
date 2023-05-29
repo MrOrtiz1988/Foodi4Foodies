@@ -52,7 +52,7 @@ function ResultItem({ result }) {
         <Rating name="half-rating-read" defaultValue={result.rating} precision={0.5} readOnly />
         <p>{result.location.display_address.join(' ')}</p>
         <p>{result.display_phone}</p>
-        <a href={result.url} target='_blank'>Visit Here</a>
+        <a href={result.url} target='_blank'><button className='btn'>Visit Here</button></a>
       </div>
       <br></br>
       <div className='btn-div'>
