@@ -31,12 +31,6 @@ function Search() {
                     value={searchInput}
                     onChange={event => setSearchInput(event.target.value)}
                 />
-                {/* <input
-                    placeholder="What would you like to eat?"
-                    value={searchInput}
-                    onChange={event => setSearchInput(event.target.value)}
-                /> */}
-                {/* <button>Search</button> */}
                 <IconButton type="submit" aria-label="Search" size="large">
                     <SearchIcon />
                 </IconButton>
