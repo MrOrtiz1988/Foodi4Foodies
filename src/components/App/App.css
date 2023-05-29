@@ -9,13 +9,6 @@ body {
   margin: 0px;
 }
 
-/* img {
-  display: inline-block;
-  max-width: 100%;
-  width: 200px;
-  height: auto;
-} */
-
 .result-title {
   text-align: center;
   width: 50%;
@@ -37,15 +30,19 @@ body {
 .result-div {
   display: block;
   margin: 40px;
-  background-color: #c9b090;
+  background-color: #E8D5C4;
   border-radius: 15px;
-  color: #146356;
+  color: #1b332f;
   overflow: hidden;
   padding: 10px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .result-details {
   margin-left: 220px;
+  font-size: 20px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -71,6 +68,7 @@ Button
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .btn_sizeMin {
@@ -89,7 +87,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  opacity: 0.75;
   text-decoration: none;
 }
 
@@ -140,7 +138,55 @@ Form Treatment
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
 
+.search-form {
+  margin: 20px;
+  text-align: center;
+}
+
 input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+.login-register {
+  margin-bottom: 20px;
+}
+
+#login-name, #login-pass, #register-name, #register-pass {
+  background-color: white;
+}
+
+.suggestion-header {
+  text-align: center;
+}
+
+.suggestions {
+  display: inline;
+  margin: 10px;
+  text-align: center;
+}
+
+.suggestions:hover {
+  cursor: pointer;
+  color: #72b7c6;
+}
+
+.suggestions-div {
+  text-align: center;
+}
+
+#re-roll {
+  margin-top: 30px;
+}
+
+.saved {
+  font-size: 25px;
+  color: #008183;
+}
+
+.page-header {
+  margin-top: 70px;
+  text-align: center;
+  color: #008183;
+}
+

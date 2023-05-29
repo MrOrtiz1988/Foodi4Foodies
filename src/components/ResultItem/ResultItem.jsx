@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import Rating from '@mui/material/Rating';
 
 
 function ResultItem({ result }) {
@@ -34,7 +35,7 @@ function ResultItem({ result }) {
         placeId: result.id,
         name: result.name,
         image: result.image_url,
-        address: result.location.display_address,
+        address: result.location.display_address.join(' '),
         rating: result.rating,
         phone: result.display_phone,
         url: result.url
@@ -48,14 +49,14 @@ function ResultItem({ result }) {
       <img src={result.image_url} className='result-img' alt={result.name} />
       <div className='result-details'>
         {!result.is_closed ? <p>Open Now</p> : <p>Closed</p>}
-        <p>{result.rating} out of 5 stars</p>
-        <p>{result.location.display_address}</p>
+        <Rating name="half-rating-read" defaultValue={result.rating} precision={0.5} readOnly />
+        <p>{result.location.display_address.join(' ')}</p>
         <p>{result.display_phone}</p>
-        <a href={result.url} target='_blank'>Visit Here</a>
+        <a href={result.url} target='_blank'><button className='btn'>Visit Here</button></a>
       </div>
       <br></br>
       <div className='btn-div'>
-        {!match() ? <button onClick={saveIt} className='btn'>Save</button> : <p>Saved</p>}
+        {!match() ? <button onClick={saveIt} className='btn'>Save</button> : <p className='saved'>✔️Saved</p>}
       </div>
     </div>
   )

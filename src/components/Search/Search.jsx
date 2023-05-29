@@ -1,6 +1,8 @@
 import { useState } from "react";
-import './Search.css';
 import { useDispatch } from 'react-redux';
+import { TextField } from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
 
 function Search() {
 
@@ -21,12 +23,17 @@ function Search() {
     return (
         <div>
             <form className="search-form" onSubmit={submitHandler}>
-                <input
-                    placeholder="What would you like to eat?"
+                <TextField
+                    size="small"
+                    id="outlined-basic"
+                    label="What would you like?"
+                    variant="outlined"
                     value={searchInput}
                     onChange={event => setSearchInput(event.target.value)}
                 />
-                <button>Search</button>
+                <IconButton type="submit" aria-label="Search" size="large">
+                    <SearchIcon />
+                </IconButton>
             </form>
         </div>
     )

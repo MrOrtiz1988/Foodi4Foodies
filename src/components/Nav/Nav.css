@@ -3,10 +3,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: fixed;
   margin: 0 0 30px;
   background-color: #72b7c6;
   overflow: hidden;
+  width: 100%;
+  z-index: 3;
 }
 
 .nav a {
@@ -16,14 +18,14 @@
 .nav-title {
   font-size: 30px;
   font-weight: 700;
-  color: #cef3ed;
+  color: #1b332f;
   padding-left: 10px;
   margin: 0;
 }
 
 .navLink {
   display: inline-block;
-  color: #cef3ed;
+  color: #1b332f;
   background-color: #72b7c6;
   text-align: center;
   padding: 24px 10px;

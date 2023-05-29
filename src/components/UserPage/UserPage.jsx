@@ -10,7 +10,7 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Welcome {user.username}, Lets Eat! </h2>
+      <h2 className='page-header'>Welcome {user.username}, Lets Eat! </h2>
 
       <Suggestions />
 

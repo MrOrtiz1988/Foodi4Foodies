@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 function Suggestions() {
     //This retrieves the 5 random suggestions from the store
@@ -27,25 +31,77 @@ function Suggestions() {
             type: 'SAGA/SEARCH',
             payload: type
         })
+        handleClose();
     }
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 600,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+    };
+
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return (
         <div>
             <h4>Dont know what to eat? Click the suggestions button</h4>
-            {!is_suggest ?
-                <button onClick={suggestToggle}>Suggestions</button>
-                : <button onClick={suggestToggle}>Close</button>}
-
-            {is_suggest &&
-                suggestions.map((type, i) => {
-                    return (
-                        <p onClick={() => chosen(type)} key={i}>{type}</p>
-                    )
-                })
-            }
-            {is_suggest && <button onClick={reRoll}>Re-Roll</button>}
+            <Button
+                size="small"
+                onClick={handleOpen}
+                variant="outlined">
+                Suggestions
+            </Button>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <h2 className='suggestion-header'>Suggestions</h2>
+                    <div className='suggestions-div'>
+                        {
+                            suggestions.map((type, i) => {
+                                return (
+                                    <h3 className='suggestions' onClick={() => chosen(type)} key={i}>{type}</h3>
+                                )
+                            })
+                        }
+                    </div>
+                    <Button id='re-roll' onClick={reRoll} variant="outlined">Re-Roll</Button>
+                </Box>
+            </Modal>
         </div>
-    )
+    );
+
+
+    // return (
+    //     <div>
+    //         <h4>Dont know what to eat? Click the suggestions button</h4>
+    //         <Button onClick={BasicModal} variant="outlined">suggestions new</Button>
+    //         {!is_suggest ?
+    //             <Button onClick={suggestToggle} variant="outlined">Suggestions</Button>
+    //             : <Button onClick={suggestToggle} variant="outlined">Close</Button>}
+
+    //         {is_suggest &&
+    //             suggestions.map((type, i) => {
+    //                 return (
+    //                     <p onClick={() => chosen(type)} key={i}>{type}</p>
+    //                 )
+    //             })
+    //         }
+    //         {is_suggest && <Button onClick={reRoll} variant="outlined">Re-Roll</Button>}
+    //     </div>
+    // )
 }
 
 export default Suggestions
