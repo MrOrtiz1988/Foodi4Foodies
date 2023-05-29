@@ -39,7 +39,7 @@ function Suggestions() {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: 600,
         bgcolor: 'background.paper',
         border: '2px solid #000',
         boxShadow: 24,
@@ -53,7 +53,14 @@ function Suggestions() {
 
     return (
         <div>
-            <Button onClick={handleOpen}>Open modal</Button>
+            <h4>Dont know what to eat? Click the suggestions button</h4>
+            <Button
+                // color="secondary"
+                size="small"
+                onClick={handleOpen}
+                variant="outlined">
+                Suggestions
+            </Button>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -61,14 +68,17 @@ function Suggestions() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    {
-                        suggestions.map((type, i) => {
-                            return (
-                                <p onClick={() => chosen(type)} key={i}>{type}</p>
-                            )
-                        })
-                    }
-
+                    <h2 className='suggestion-header'>Suggestions</h2>
+                    <div className='suggestions-div'>
+                        {
+                            suggestions.map((type, i) => {
+                                return (
+                                    <h4 className='suggestions' onClick={() => chosen(type)} key={i}>{type}</h4>
+                                )
+                            })
+                        }
+                    </div>
+                    <Button id='re-roll' onClick={reRoll} variant="outlined">Re-Roll</Button>
                 </Box>
             </Modal>
         </div>

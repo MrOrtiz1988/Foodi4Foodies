@@ -89,7 +89,6 @@ Button
 }
 
 .btn:hover {
-  /* background-color: #008183; */
   opacity: 0.75;
   text-decoration: none;
 }
@@ -157,4 +156,28 @@ input {
 
 #outlined-basic {
   background-color: white;
+}
+
+.suggestion-header {
+  text-align: center;
+}
+
+.suggestions {
+  display: inline;
+  margin: 10px;
+  text-align: center;
+  
+}
+
+.suggestions:hover {
+  cursor: pointer;
+  color: #72b7c6;
+}
+
+.suggestions-div {
+  text-align: center;
+}
+
+#re-roll {
+  margin-top: 30px;
 }
