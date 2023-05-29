@@ -21,6 +21,12 @@ function SavedList() {
     })
   }
 
+  const deletePlace = (id) => {
+    dispatch({
+      type: 'SAGA/DELETE_PLACE',
+      payload: id
+    })
+  }
 
   return (
     <div className="container">
@@ -42,6 +48,7 @@ function SavedList() {
                 <br></br>
                 <div className='btn-div'>
                   <button onClick={() => addToFavorites(place.id)} className='btn'>Love it!</button>
+                  <button onClick={() => deletePlace(place.id)} className='btn'>Remove</button>
                 </div>
               </div>
             )
