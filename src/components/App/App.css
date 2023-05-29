@@ -42,10 +42,14 @@ body {
   color: #1b332f;
   overflow: hidden;
   padding: 10px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .result-details {
   margin-left: 220px;
+  font-size: 20px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -166,7 +170,6 @@ input {
   display: inline;
   margin: 10px;
   text-align: center;
-  
 }
 
 .suggestions:hover {
@@ -180,4 +183,9 @@ input {
 
 #re-roll {
   margin-top: 30px;
+}
+
+.saved {
+  font-size: 25px;
+  color: #008183;
 }
