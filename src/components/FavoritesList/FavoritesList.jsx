@@ -24,7 +24,7 @@ function FavoritesList() {
   return (
     <div className="container">
       <div>
-        <p>Favorites List</p>
+        <h1 className='page-header'>Here are your favorites!</h1>
       </div>
       {
         placeList.map(place => {

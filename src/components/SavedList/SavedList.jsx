@@ -30,7 +30,7 @@ function SavedList() {
 
   return (
     <div className="container">
-      <h1>Saved Page</h1>
+      <h1 className='page-header'>Here is your Saved Places!</h1>
 
       {
         placeList.map(place => {

@@ -55,7 +55,6 @@ function Suggestions() {
         <div>
             <h4>Dont know what to eat? Click the suggestions button</h4>
             <Button
-                // color="secondary"
                 size="small"
                 onClick={handleOpen}
                 variant="outlined">
@@ -73,7 +72,7 @@ function Suggestions() {
                         {
                             suggestions.map((type, i) => {
                                 return (
-                                    <h4 className='suggestions' onClick={() => chosen(type)} key={i}>{type}</h4>
+                                    <h3 className='suggestions' onClick={() => chosen(type)} key={i}>{type}</h3>
                                 )
                             })
                         }

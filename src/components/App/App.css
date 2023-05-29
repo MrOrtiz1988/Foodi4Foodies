@@ -9,13 +9,6 @@ body {
   margin: 0px;
 }
 
-/* img {
-  display: inline-block;
-  max-width: 100%;
-  width: 200px;
-  height: auto;
-} */
-
 .result-title {
   text-align: center;
   width: 50%;
@@ -190,3 +183,10 @@ input {
   font-size: 25px;
   color: #008183;
 }
+
+.page-header {
+  margin-top: 70px;
+  text-align: center;
+  color: #008183;
+}
+
