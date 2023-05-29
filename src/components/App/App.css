@@ -152,7 +152,7 @@ input {
   margin-bottom: 20px;
 }
 
-#outlined-basic {
+#login-name, #login-pass, #register-name, #register-pass {
   background-color: white;
 }
 

@@ -38,7 +38,7 @@ function LoginForm() {
         <TextField
           required
           size="small"
-          id="outlined-basic"
+          id="login-name"
           type="text"
           label="Username"
           variant="outlined"
@@ -51,7 +51,7 @@ function LoginForm() {
         <TextField
           required
           size="small"
-          id="outlined-basic"
+          id="login-pass"
           type='password'
           label="Password"
           variant="outlined"

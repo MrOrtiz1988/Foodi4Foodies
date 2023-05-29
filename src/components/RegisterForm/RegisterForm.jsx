@@ -32,7 +32,7 @@ function RegisterForm() {
       <TextField
           required
           size="small"
-          id="outlined-basic"
+          id="register-name"
           type="text"
           label="Username"
           variant="outlined"
@@ -44,7 +44,7 @@ function RegisterForm() {
       <TextField
           required
           size="small"
-          id="outlined-basic"
+          id="register-pass"
           type='password'
           label="Password"
           variant="outlined"
