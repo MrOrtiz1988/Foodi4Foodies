@@ -40,7 +40,7 @@ function SavedList() {
                 <h2 className='result-title'>{place.name}</h2>
                 <img src={place.image} className='result-img' alt={place.name} />
                 <div className='result-details'>
-                  <Rating name="half-rating-read" defaultValue={place.rating} precision={0.5} readOnly />
+                  <Rating name="half-rating-read" defaultValue={Number(place.rating)} precision={0.5} readOnly />
                   <p>{place.address}</p>
                   <p>{place.phone}</p>
                   <a href={place.url} target='_blank'><button className='btn'>Visit Here</button></a>
