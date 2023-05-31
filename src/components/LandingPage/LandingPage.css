@@ -78,3 +78,9 @@ Grid
   flex-basis: 100%;
   max-width: 100%;
 }
+
+.foodies1 {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 15px;
+}
