@@ -11,10 +11,8 @@ function UserPage() {
   return (
     <div className="container">
       <h2 className='page-header'>Welcome {user.username}, Lets Eat! </h2>
-
-      <Suggestions />
-
       <Search />
+      <Suggestions />
 
       {
         searchResults.map(result => {

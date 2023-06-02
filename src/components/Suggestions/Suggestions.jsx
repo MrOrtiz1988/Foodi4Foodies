@@ -54,7 +54,7 @@ function Suggestions() {
         <div>
             <h4>Dont know what to eat? Click the suggestions button</h4>
             <Button
-                size="small"
+                size="large"
                 onClick={handleOpen}
                 variant="outlined">
                 Suggestions
