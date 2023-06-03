@@ -192,8 +192,55 @@ input {
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+
+  .result-title {
+    text-align: center;
+    width: 90%;
   }
+  
+  .btn-div {
+    text-align: center;
+  }
+  
+  .result-img {
+    max-width: 100%;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    display: block;
+    float: right;
+  }
+  
+  .result-div {
+    display: block;
+    margin: 20px;
+    background-color: #E8D5C4;
+    border-radius: 15px;
+    color: #1b332f;
+    overflow: hidden;
+    padding: 10px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .result-details {
+    display: block;
+    margin-left: 0px;
+    font-size: 20px;
+  }
+
+  .suggestions {
+    display: block;
+    margin: 10px;
+    text-align: center;
+  }
+
+  #re-roll {
+    margin-top: 30px;
+    margin-left: 250px;
+  }
+  
 }
 
