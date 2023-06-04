@@ -5,6 +5,10 @@ function AboutPage() {
         <br />
         <br />
         <br />
+        <center>
+            <h1>😄Thanks for checking out the app!😁</h1>
+        </center>
+            
             <h3>Thoughts? Opinions? Contact me and let me know what you think! 😃</h3>
             <ul>
                 <li>Email: <a href="l.ortizintec@gmail.com">l.ortizintec@gmail.com</a></li>
@@ -29,7 +33,7 @@ function AboutPage() {
             </ul>
             <h3>Special Thanks!</h3>
             <ul>
-                <li>My Wife</li>
+                <li>My Wife🥰</li>
                 <li>Citrine Cohort</li>
                 <li>My instructors: Matt & Andrew</li>
             </ul>
