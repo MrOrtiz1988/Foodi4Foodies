@@ -23,7 +23,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     maxBodyLength: Infinity,
     url: `https://api.yelp.com/v3/businesses/search?term=${clientInfo.term}&limit=10&latitude=${clientInfo.latitude}&longitude=${clientInfo.longitude}`,
     headers: { 
-      'authorization': process.env.MY_KEY
+      'authorization': 'Bearer ' + process.env.MY_KEY
     }
   };
   
