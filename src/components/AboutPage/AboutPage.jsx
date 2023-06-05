@@ -29,7 +29,7 @@ function AboutPage() {
                 <li>passport.js</li>
                 <li>Material UI</li>
                 <li>Axios</li>
-                <li></li>
+                <li>PostgresSQL</li>
             </ul>
             <h3>Special Thanks!</h3>
             <ul>
