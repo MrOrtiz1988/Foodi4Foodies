@@ -22,7 +22,7 @@ Have you ever had times when you want to go out with your friends or your partne
 
 ## Screenshots
 
-<img src="" />
+<img src="public/foodies1.jpeg" />
 
 ## Built With
 
@@ -62,6 +62,3 @@ Make sure you make an account in order to enjoy
 
 <a href="https://www.linkedin.com/in/https://www.linkedin.com/in/luis-ortiz-swe/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>  <a href="mailto:l.ortizintec@gmail.com"><img src=https://raw.githubusercontent.com/johnturner4004/readme-generator/master/src/components/assets/images/email_me_button_icon_151852.svg /></a>
 
-## Update Documentation
-
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
