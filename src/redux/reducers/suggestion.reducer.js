@@ -8,18 +8,19 @@ const foodTypes = ['Canadian', 'Caribbean', 'Cuban', 'Hawaiian', 'Mexican', 'Bur
     'Brunch', 'Bistro', 'Seafood', 'Vegan', 'Vegetarian', 'Grill', 'Jewish/Kosher', 'Soup', 'Lunch', 'Dinner', 'Organic',
     'Noodles', 'African', 'Egyptian', 'Ethiopian', 'Brunch', 'Beef', 'Pork'];
 
-//randomizer returns a random number from 0 to the length number of foodTypes
-const randomizer = () => {
-    return Math.floor(Math.random() * foodTypes.length);
+//randomizer returns a random number between min and max number this way to avoid
+//reapeated suggestions
+const randomizer = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 //This function generates a new set of suggestions everytime it is called upon
 const generateTypes = () => {
-    const suggest1 = foodTypes[randomizer()];
-    const suggest2 = foodTypes[randomizer()];
-    const suggest3 = foodTypes[randomizer()];
-    const suggest4 = foodTypes[randomizer()];
-    const suggest5 = foodTypes[randomizer()];
+    const suggest1 = foodTypes[randomizer(0, 15)];
+    const suggest2 = foodTypes[randomizer(16, 30)];
+    const suggest3 = foodTypes[randomizer(31, 45)];
+    const suggest4 = foodTypes[randomizer(46, 60)];
+    const suggest5 = foodTypes[randomizer(61, 75)];
     return [suggest1, suggest2, suggest3, suggest4, suggest5];
 }
 
